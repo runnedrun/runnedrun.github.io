@@ -31,23 +31,16 @@ $(function(){
 	$("body").append(grid);
 	grid.css({"height": "100%", "width": "100%"});
 
-	var lastXCoord = false;
-	var lastYCoord = false;
-
-	function blink() {
-		lastXCoord && lastYCoord && cells[lastYCoord][lastXCoord].animate({"opacity": 0}, 1000)		
-
+	function blink() {				
 		var xCoord = Math.round(Math.random() * (numberOfCellsX - 1));
-		var yCoord = Math.round(Math.random() * (numberOfCellsY - 1));
-	
-		lastXCoord = xCoord
-		lastYCoord = yCoord
-		
-		console.log("blinking", yCoord, xCoord);
+		var yCoord = Math.round(Math.random() * (numberOfCellsY - 1));					
 
 		cells[yCoord][xCoord].animate({opacity: 1}, 1000)		
 
 		setTimeout(blink, 500);
+		setTimeout(function() {
+			cells[yCoord][xCoord].animate({"opacity": 0}, 1000)
+		}, 500)
 	}
 
 	function droplets() {
