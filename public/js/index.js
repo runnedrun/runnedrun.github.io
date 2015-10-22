@@ -1,12 +1,20 @@
 var grid;
 var cells;
 
-$(function(){
+function resizeSections() {
 	var screenHeight = window.innerHeight
-	var screenWidth = window.innerWidth
+	$(".section-1").css("height", screenHeight);
+	$(".section-2").css("min-height", screenHeight);
+}
 
-	var numberOfCellsX = screenWidth / 30;
-	var numberOfCellsY = screenHeight / 30;
+$(function(){
+	resizeSections();
+
+	var screenHeight = window.innerHeight
+	var screenWidth = window.innerWidth	
+
+	var numberOfCellsX = Math.floor(screenWidth / 25);
+	var numberOfCellsY = Math.floor(screenHeight / 25);
 
 	grid = $("<table class='grid'></table>");
 	
@@ -31,35 +39,33 @@ $(function(){
 	$("body").append(grid);
 	grid.css({"height": "100%", "width": "100%"});
 
-	function blink() {				
+	function blinkCell(xCoord, yCoord, animateTime, holdTime, onFinish) {
+		var holdTime = holdTime || 500;
+		var animateTime = animateTime || 1000;
+		cells[yCoord][xCoord].animate({opacity: 1}, animateTime)				
+
+		setTimeout(function() {
+			cells[yCoord][xCoord].animate({"opacity": 0}, animateTime);
+			onFinish && onFinish();
+		}, holdTime)
+	}
+
+	function blinkBackground() {
 		var xCoord = Math.round(Math.random() * (numberOfCellsX - 1));
 		var yCoord = Math.round(Math.random() * (numberOfCellsY - 1));					
 
-		cells[yCoord][xCoord].animate({opacity: 1}, 1000)		
-
-		setTimeout(blink, 500);
-		setTimeout(function() {
-			cells[yCoord][xCoord].animate({"opacity": 0}, 1000)
-		}, 500)
+		blinkCell(xCoord, yCoord)
+		setTimeout(blinkBackground, 500);
 	}
 
-	function droplets() {
-		var steps
+	function flickerIn(xCoord, yCoord) {
+		blinkCell(xCoord, yCoord, 50, Math.random() * 200 + 50, function() {
+			setTimeout(function() { blinkCell(xCoord, yCoord, 100, 1, function() {
+				cells[yCoord][xCoord].animate({opacity: 1}, 50)		
+			}) }, 100)
+		});
 	}
 
-	function wave(start) {
-		var intensities = [];
-		intensities.push({cell: start, intensity: 5});
-
-		intensities.forEach(function(intensity) {
-			intensity.cell
-		})
-
-		function makeWave() {
-
-		}
-	}
-	
 	var lastXCoord = 0
 	function reveal() {	
 		var speed = 2
@@ -74,14 +80,28 @@ $(function(){
 			lastXCoord = lastXCoord + speed;
 			setTimeout(reveal, 10);
 		} else {			
-			setTimeout(function() { 
-				lastXCoord = 0; 
+			setTimeout(function() { 				
 				$(".contact-info").css({"z-index": 100});
-				blink() 				
-			}, 1000)
+				blinkBackground() 		
+				cellsInChevron.forEach(function(cell) {
+					flickerIn(cell[0], cell[1]); 	
+				})			
+			}, 300)
 		}
 	}
 
+	// we shouldn't blink the cells which are being used for the chevron
+	var center = Math.floor(numberOfCellsX / 2)
+	var cellsInChevron = [
+		[center, numberOfCellsY - 2],
+		[center + 1, numberOfCellsY - 3],
+		[center - 1, numberOfCellsY - 3],
+		[center + 2, numberOfCellsY - 4],
+		[center - 2, numberOfCellsY - 4]
+	]
+
 	reveal();	
 })
+
+$(window).resize(resizeSections);
 

@@ -1,13 +1,13 @@
-html, body {
-	margin:0;
+
+body {
+	margin: 0;
 	min-height: 100%;
-	font-family: 'Titillium Web', sans-serif;
+	font-family: 'Titillium Web', sans-serif;	
 }
 
 .grid {
 	position: absolute;
-	top: 0px;
-   	border:1px solid #CCC;
+	top: 0px;   	
     border-collapse:collapse;
 }
 
@@ -16,10 +16,113 @@ html, body {
 	position: relative;
   	top: 50%;
   	transform: translateY(-50%);
+  	
+}
+
+.contact-box {
+	border: 2px solid gray;
+	display: inline-block;
+	padding: 10px 20px 15px 20px;
 }
 
 .cell {
 	background: gray;
 	opacity: 1;
 	border: none;
+}
+
+.title {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.tldr {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.activities {
+	margin-top: 70px;
+}
+
+.activity {
+	text-align: center
+}
+
+.school-shaped-logo {
+	width: 200px;
+}
+
+.twitter-logo {
+	width: 83px;
+}
+
+.pivotal-logo {
+	width: 188px;
+}
+
+.logo {
+	margin-bottom: 8px;
+}
+
+.activity-heading {
+	margin-top: 0px;
+	margin-bottom: 3px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.education-intro {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.olin-logo {
+	display: inline;
+	position: relative;
+	bottom: 9px;
+	width: 50px;
+}
+
+.olin-title {
+	display: inline;
+	margin-left: 10px
+}
+
+.education {
+	margin-top: 30px;
+}
+
+@media (max-device-width: 480px) { 
+	h1 {
+		font-size: 90px;
+	}
+
+	h2 {
+		font-size: 70px;
+	}
+
+	h3 {
+		font-size: 60px;
+	}
+
+	h4 {
+		font-size: 50px;
+	}
+
+	body {
+		font-size: 40px;
+	}
+
+	.activity {
+		margin-bottom: 20px;
+	}
+
+	.container {
+		margin-top: 40px; 
+	}
+
+	.olin-logo {
+		display: none;
+	}
 }
