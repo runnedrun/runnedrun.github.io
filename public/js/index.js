@@ -54,8 +54,11 @@ $(function(){
 		var xCoord = Math.round(Math.random() * (numberOfCellsX - 1));
 		var yCoord = Math.round(Math.random() * (numberOfCellsY - 1));					
 
-		blinkCell(xCoord, yCoord)
-		setTimeout(blinkBackground, 500);
+		if (cellsInChevron.indexOf([xCoord, yCoord]) <= -1) {
+			blinkCell(xCoord, yCoord)		
+		}
+				
+		setTimeout(blinkBackground, 500);	
 	}
 
 	function flickerIn(xCoord, yCoord) {
