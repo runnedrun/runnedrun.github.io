@@ -16,6 +16,19 @@ $(function(){
 	var numberOfCellsX = Math.floor(screenWidth / 25);
 	var numberOfCellsY = Math.floor(screenHeight / 25);
 
+	var contactBox = $(".contact-box")
+	var contactBoxY = contactBox.offset().top
+	var contactBoxX = contactBox.offset().left
+
+	var contactBoxHeight = contactBox.height();	
+	var contactBoxWidth = contactBox.width();
+
+	var contactBoxXStart = Math.floor(contactBoxX) / 25 - 2
+	var contactBoxXEnd = Math.floor((contactBoxX + contactBoxWidth) / 25) + 2
+
+	var contactBoxYStart = Math.floor(contactBoxY / 25) - 2
+	var contactBoxYEnd = Math.floor((contactBoxY + contactBoxHeight) / 25) + 2
+
 	grid = $("<table class='grid'></table>");
 	
 	cells = [];
@@ -53,12 +66,18 @@ $(function(){
 	function blinkBackground() {
 		var xCoord = Math.round(Math.random() * (numberOfCellsX - 1));
 		var yCoord = Math.round(Math.random() * (numberOfCellsY - 1));					
+		
 
-		if (cellsInChevron.indexOf([xCoord, yCoord]) <= -1) {
-			blinkCell(xCoord, yCoord)		
-		}
-				
-		setTimeout(blinkBackground, 500);	
+		var blinkInContactBox = (contactBoxXStart < xCoord) && (xCoord < contactBoxXEnd) 
+			&& (contactBoxYStart < yCoord) && (yCoord < contactBoxYEnd)
+		var blinkInChevron = cellsInChevron.map(String).indexOf(String([xCoord, yCoord])) > -1 
+
+		if (!blinkInChevron && !blinkInContactBox) {
+			blinkCell(xCoord, yCoord)			
+			setTimeout(blinkBackground, 200);			
+		} else {
+			blinkBackground()
+		}			
 	}
 
 	function flickerIn(xCoord, yCoord) {
@@ -71,18 +90,18 @@ $(function(){
 
 	var lastXCoord = 0
 	function reveal() {	
-		var speed = 2
-		if (lastXCoord < numberOfCellsX) {
-			for (i=0; i < numberOfCellsY; i++) {			
-				for (j = lastXCoord; j < Math.min(lastXCoord + speed, numberOfCellsX); j++) {
-					var fadeSpeed = Math.round(Math.random() * 1000)
-					cells[i][j].animate({opacity: 0}, fadeSpeed)				
-					// cells[i][j].animate({opacity: 0}, 100 + 100 * Math.sqrt(i))				
-				}				
-			}					
-			lastXCoord = lastXCoord + speed;
-			setTimeout(reveal, 10);
-		} else {			
+		// var speed = 100
+		// if (lastXCoord < numberOfCellsX) {
+		// 	for (i=0; i < numberOfCellsY; i++) {			
+		// 		for (j = lastXCoord; j < Math.min(lastXCoord + speed, numberOfCellsX); j++) {
+		// 			var fadeSpeed = Math.round(Math.random() * 1000)
+		// 			cells[i][j].animate({opacity: 0}, fadeSpeed)				
+		// 			// cells[i][j].animate({opacity: 0}, 100 + 100 * Math.sqrt(i))				
+		// 		}				
+		// 	}					
+		// 	lastXCoord = lastXCoord + speed;
+		// 	setTimeout(reveal, 10);
+		// } else {			
 			setTimeout(function() { 				
 				$(".contact-info").css({"z-index": 100});
 				blinkBackground() 		
@@ -90,7 +109,7 @@ $(function(){
 					flickerIn(cell[0], cell[1]); 	
 				})			
 			}, 300)
-		}
+		// }
 	}
 
 	// we shouldn't blink the cells which are being used for the chevron
