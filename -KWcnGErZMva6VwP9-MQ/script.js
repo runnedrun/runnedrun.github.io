@@ -13,7 +13,7 @@ setInterval(function() {
 var lettersToFade = $(".by-letter-fade").children();
 var index = 0
 setInterval(function() {
-  if (index >== lettersToFade.length) {
+  if (index >= lettersToFade.length) {
     index = 0
   }
 
@@ -25,5 +25,5 @@ setInterval(function() {
     }
   }) 	
 
-  index = index +2
+  index = index + 3
 }, 500)
