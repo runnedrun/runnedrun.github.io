@@ -1,0 +1,25 @@
+.title {
+  color: lightcoral;
+}
+    
+#colorblock {
+  background-color: lightcoral;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+#bootstrap-example {
+  margin-bottom: 20px;
+}
+
+
+#function-take-function-ex {
+margin-bottom: 20px;
+}
+
+#console-log-example {
+margin-bottom: 20px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script src="/third_party/jquery/jquery.min.js"></script>
+    <script src="/third_party/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/third_party/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h2 class="text-center title">What I've learned</h2>
+        <div class="row">
+          <div class="col-xs-6">
+            <h2 class="text-center">Description</h2>
+          </div>
+          <div class="col-xs-6">
+            <h2 class="text-center">Example</h2>
+          </div>
+        </div>
+
+        <div class="row learning-item">
+          <div class="col-xs-7 description"> 
+            <b>Console.log:</b>
+            <p>
+              Console.log is basically "printing out" what is in             the parenthesis. It will take what is in the                   parenthesis and "log" it in the console. This is               an example of using console.log --> 
+            </p>
+
+            <b>Functions:</b>
+            <p>
+              Functions take in inputs, does something with them and produces an output. Declare a function and call it a name (in the first example, the name is logArgs). The console.log example is also an example of a function -->
+            </p>
+           
+            <li>Function that takes in arguments:</li>
+          
+            <p>
+              Functions can take on arguments by calling the function. The code in the parenthesis is called the <i>parameter</i>. An example of a function taking on an argument is on the right which calculates the perimeter. -->
+            </p>
+            
+            <li>Function that takes in a function:</li><p>
+            Functions that take on a function are used when we want our function to do something within another function. In this example, we don't know when the user is going to press enter but when they do, they activate the function within of turning the background color yellow.
+            </p>
+
+            <b>Jquery:</b>
+            <p>
+              Jquery allows you to create interaction between elements on your website. The example on the right allows us to be interactive with a button. When you click the button, it will print "Jquery Example" in the console. Below the button is another example where you can interact with a pink box by hovering in and out with your mouse and by clicking it.
+            </p>
+            
+            <b>Bootstrap:</b>
+            <p>
+            Bootstrap is a framework for HTML, CSS, and JavaScript that helps make your website look and function better. In the example, Bootstrap allows you to set an element in the selected column. Columns only go to 12, which should be the sum of all the column numbers in your row.
+            </p>
+              
+            <b>Firebase:</b>
+            <p>
+            Firebase is a useful place where you can store information from your site. For example, things you enter into the text box example on the right will be saved to the firebase database.
+            </p>
+</div>
+          <div class="col-xs-5">
+            <b>Console.log:</b>
+            <div id="console-log-example"></div>
+            
+            <b>Functions:</b>
+            <div id="function-example">                  </div>
+            
+            <b>Function taking on a function:</b>
+            <div id="function-take-function-ex">
+              <pre>$("#function-input").keydown(function(e) {	
+  if (e.keyCode == "13") {
+    $("#function-input").css("background-color", "yellow");
+  }
+})</pre>
+              <input type="text" id="function-input" placeholder="function take function"/> 
+            </div>
+            
+            <b>Jquery:</b>
+            <div id="jquery-example">
+              <pre>$("#button").click(function() {
+  console.log("Jquery Example");
+});</pre>
+              <input type = "button" value = "jquery example button" id="button">
+              <div id="colorblock"></div> 
+            </div>
+          
+            <b>Bootstrap:</b>
+            <div id="bootstrap-example">
+              &lt;div class=&quot;col-xs-5&quot;&gt;&lt;/div&gt;
+            </div>
+
+            <b>Firebase:</b>
+            <div id="firebase-example">
+              <pre>var input = $("#firebase-input")
+
+input.keydown(function(e) {	
+  if (e.keyCode == "13") {
+    var valueToSave = input.val();
+    addListItem("sophiasList", valueToSave);
+  }
+})
+
+onNewListItem("sophiasList", function(value) {
+  $("#firebase-display").append("<div>" + value + "</div>")
+}) </pre>
+              <input type="text" id="firebase-input" placeholder="firebase example"/>
+              <div id="firebase-display"></div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    <script src="firebase-config.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>
