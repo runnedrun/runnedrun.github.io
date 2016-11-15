@@ -7,13 +7,13 @@ setInterval(function() {
     $(".blinking").css({"visibility": "visible"});
     shown = true;
   }
-}, 1000)
+}, 2000)
 
 
 var lettersToFade = $(".by-letter-fade").children();
 var index = 0
 setInterval(function() {
-  if (index === lettersToFade.length) {
+  if (index >== lettersToFade.length) {
     index = 0
   }
 
@@ -25,5 +25,5 @@ setInterval(function() {
     }
   }) 	
 
-  index++
+  index = index +2
 }, 500)
