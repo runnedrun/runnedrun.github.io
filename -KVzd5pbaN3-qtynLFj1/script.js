@@ -16,6 +16,7 @@ consoleLogExample.html(formattedExample)
 //function with argument
 function perimeter(length, width) {
   console.log(length + length + width + width);
+  
 };
 
 var call = "\nperimeter(3,5)"
