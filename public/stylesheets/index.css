@@ -1,40 +1,56 @@
+@viewport {
+  width: device-width;
+}
+html {
+  font-size: 62.5%;
+  width:100%;
+}
 
 body {
-	margin: 0;
+  font-family: 'Karla', sans-serif;
+  color: #373737;
+  font-size: 16px;
+  font-size: 1.6rem;
+  margin: 0;
 	min-height: 100%;
 	font-family: 'Titillium Web', sans-serif;	
 }
 
 h3 {
 	font-size: 20px
+	font-size: 2.0rem;
 }
 
 h4 {
 	font-size: 14px
+	font-size: 1.4rem;
 }
 
 div {
 	font-size: 12px
+	font-size: 1.2rem;
 }
 
 .grid {
 	position: absolute;
 	top: 0px;   	
-    border-collapse:collapse;
+  border-collapse:collapse;
 }
 
 .contact-info {
 	text-align: center;
 	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
+	top: 50%;
+	transform: translateY(-50%);
   	
 }
 
 .contact-box {
 	border: 2px solid gray;
+	border: .2rem solid gray;
 	display: inline-block;
 	padding: 10px 20px 15px 20px;
+	padding: 1.0rem 2.0rem 1.5rem 2.0rem;
 }
 
 .cell {
@@ -45,16 +61,19 @@ div {
 
 .title {
 	margin-top: 40px;
+	margin-top: 4.0rem;
 	text-align: center;
 }
 
 .tldr {
 	margin-top: 20px;
+	margin-top: 2.0rem;
 	text-align: center;
 }
 
 .activities {
 	margin-top: 70px;
+	margin-top: 7.0rem;
 }
 
 .activity {
@@ -62,20 +81,25 @@ div {
 }
 
 .jobs h3 {
-	font-size: 20px
+	font-size: 20px;
+	font-size: 2.0rem;
 }
 
 .jobs h4 {
-	font-size: 14px
+	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .jobs div {
-	font-size: 12px
+	font-size: 12px;
+	font-size: 1.2rem;
 }
 
 .job-group {
 	border: 2px solid rgb(210, 210, 210);
+	border: . 20rem solid rgb(210, 210, 210);
 	padding: 15px;
+	padding: 1.5rem;
 }
 
 /*.school-shaped-logo {
@@ -100,60 +124,97 @@ div {
 
 .line-1 {
 	margin-bottom:  15px;
+	margin-bottom:  1.5rem;
 }
 
 .logo {
 	margin-bottom: 15px;
+	margin-bottom: 1.5rem;
 	height: 50px;
+	height: 5.0rem;
 }
 
 .activity-heading {
 	margin-top: 0px;
 	margin-bottom: 7px;
+	margin-bottom: .7rem;
 	padding-top: 0px;
+	margin-bottom: .7rem;
 	padding-bottom: 0px;
 }
 
 .heading-group {
 	margin-bottom: 10px;
+	margin-bottom: 1.0rem;
 }
 
 .education-intro {
 	margin-top: 50px;
+	margin-top: 3.0rem;
 	text-align: center;
 }
 
 .job-description {
 	height: 50px;
+	height: 5.0rem;
+}
+
+.education-title-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .edu-intro-line-1  {
 	margin-bottom: 5px;
+	margin-bottom: 1rem;
 	margin-top: 5px;
+	margin-top: .5rem;
+	font-size: 1.8rem;
 }
 
 .edu-intro-line-2 {
 	margin-top: 0px;
 	margin-bottom: 20px;
+	margin-bottom: 2.0rem;
+	font-size: 1.8rem;
 }
 
 .olin-logo {
 	display: inline;
-	position: relative;
-	bottom: 9px;
 	width: 50px;
+	width: 5.0rem;
 }
 
 .olin-title {
-	display: inline;
-	margin-left: 10px
+	display: inline;	
+	margin-left: 10px;
+	margin-left: 1.0rem;
+	margin-bottom: 2.0rem
 }
 
 .education {
 	margin-top: 30px;
+	margin-top: 3.0rem;
 	margin-bottom: 30px;
+	margin-bottom: 3.0rem;
 }
 
+.education h1 {
+	font-size: 2.5rem;
+}
+
+.education h3 {
+	font-size: 1.8rem;
+}
+
+.education h4 {
+	font-size: 1.6rem;
+}
+
+.education .activity {
+	font-size: 1.2rem;
+}
 
 @media (max-device-width: 480px) { 
 	h1 {
@@ -215,5 +276,25 @@ div {
 
 	.job-group {
 		margin-bottom: 100px;
+	}
+
+	.education h1 {
+		font-size: 5.0rem;
+	}
+
+	.education h3 {
+		font-size: 4.0rem;
+	}
+
+	.education h4 {
+		font-size: 3.6rem;
+	}
+
+	.education .activity {
+		font-size: 2.4rem;
+	}
+
+	.edu-intro-line-1, .edu-intro-line-2  {
+		font-size: 3.0rem;
 	}
 }
