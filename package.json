@@ -1,0 +1,21 @@
+{
+  "name": "blog-gen",
+  "description": "a world clock app to demonstrate how to use Shovel",
+  "author": "David Gaynor",
+  "version": "0.0.10",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "prettier": "^1.19.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}

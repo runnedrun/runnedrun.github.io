@@ -1,13 +1,13 @@
 const path = require('path')
+const postLocations = require('./post-locations.js')
 
 const config = (name, env) => {
   return {
     mode: env,
     name: name,
-    entry: {
-      index: [`./index.js`],
-      blog: [`./blog.js`],
-    },
+    entry: Object.assign({
+      index: [`./index.js`],      
+    }, postLocations),
     output: {
       path: path.resolve('../public/js/blog'),
       filename: '[name].js',

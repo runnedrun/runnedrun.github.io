@@ -1,7 +1,6 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 import {MDXProvider} from '@mdx-js/react'
-import Hello from './posts/5-lessons-from-impact-startups.mdx'
 const blogs = require('./blogsList')
 
 const components = {

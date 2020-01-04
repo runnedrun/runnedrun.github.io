@@ -1,14 +1,19 @@
 module.exports = {
-  "Discover": {
-      subtitle: "Identifying meaningful problems to solve.",
-      posts: ["5 Lessons From Impact Startups"]
+  Discover: {
+    subtitle: "Identifying meaningful problems to solve.",
+    posts: ["5 Lessons From Impact Startups"]
   },
-  "Do": {
+  Do: {
     subtitle: "Exexuting quickly, collaboratively and joyfully.",
-    posts: ["A new way to build products"]
+    posts: []
+    // posts: ["A new way to build products"]
   },
-  "Reflect" : {
+  Reflect: {
     subtitle: "Thoughts that differentiate me from a sea cucumber.",
-    posts: ["Why is Nairobi safer than Johannesburg?"]
+    posts: []
+    // posts: ["Why is Nairobi safer than Johannesburg?"]
+  },
+  Other: {
+    posts: ["About David"]
   }
-}
+};
