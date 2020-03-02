@@ -2,7 +2,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 import {MDXProvider} from '@mdx-js/react'
-import Post from './5-lessons-from-impact-startups.mdx'
+import Post from './about-david.mdx'
 
 const components = {
   pre: props => <div {...props} />,

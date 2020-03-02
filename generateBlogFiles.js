@@ -1,25 +1,39 @@
-const blogList = require("./blog-gen/blogList.js")
-const htmlTemplate = require("./blog-gen/post-template.html")
-const jsTemplate = require("./blog-gen/post-template.js")
+const blogList = require("./blog-gen/blogsList.js")
+const htmlTemplate = require("./blog-gen/posts/post-template.html")
+const jsTemplate = require("./blog-gen/posts/post-template.js")
 const fs = require("fs")
 
+const allPosts = Object.keys(blogList)
 
-const allPosts = Object.keys(blogList).reduce((postList, category) => {
-  return allPosts.concat(blogList[category].posts)
-}, [])
+const allPostLocations = {}
 
 allPosts.forEach((postTitle) => {
-  const postFileName = postTitle.toLowerCase().replace(' ', '-')
-  const postMDXFileLocation = `blog-gen/posts/${postFileName}/${postFileName}.mdx`
-  const postJsFileLocation = `blog-gen/posts/${postFileName}/generated-blog.js`
+  const postFileName = postTitle.toLowerCase().replace(/ /g, '-')
+  const dirLocation = `blog-gen/posts/${postFileName}`
+  const relativeDirLocation = `./posts/${postFileName}`
+  const postMDXFileLocation = `${dirLocation}/${postFileName}.mdx`
+  const postJsFileLocation = `${dirLocation}/generated-blog.js`
   const postHTMLFileLocation = `posts/${postFileName}.html`
 
-  const replacedHTML = htmlTemplate.replace('{{blogTitle}}', postTitle).replace('{{blogFileName}}', postFileName)  
-  replacedJS = jsTemplate.replace('{{blogFileName}}', postFileName)
+  allPostLocations[postFileName] = `${relativeDirLocation}/generated-blog.js`
 
-  fs.write(postJsFileLocation, replacedJS)
-  fs.write(postHTMLFileLocation, replacedHTML)
-  fs.exists(postMDXFileLocation).then((err, exists) => {
-    console.log('existss?', err, exists)
-  })
+  const replacedHTML = htmlTemplate.replace('{{blogTitle}}', postTitle).replace('{{blogFileName}}', postFileName)  
+  const replacedJS = jsTemplate.replace('{{blogFileName}}', postFileName)
+      
+  fs.writeFile(postHTMLFileLocation, replacedHTML)
+  fs.exists(dirLocation, function(exists) {
+    if (exists) {
+      fs.writeFile(postJsFileLocation, replacedJS)             
+    } else {
+      fs.mkdir(dirLocation, () => {
+        fs.writeFile(postJsFileLocation, replacedJS) 
+        fs.writeFile(postMDXFileLocation, postTitle)
+      })
+    }
+  })  
 })
+
+const posts = JSON.stringify(allPostLocations, null, 2)
+const postLocationsString = "module.exports = " + posts
+
+fs.writeFile("blog-gen/postLocations.js", postLocationsString)

@@ -1,3 +1,4 @@
+module.exports = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,3 +15,4 @@
   <script type="text/javascript" src="../public/js/blog/{{blogFileName}}.js"></script>
 </body>
 </html>
+`

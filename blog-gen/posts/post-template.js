@@ -1,7 +1,8 @@
+module.exports = `
 const React = require('react')
 const ReactDOM = require('react-dom')
 import {MDXProvider} from '@mdx-js/react'
-import Post from '{{blogFileName}}'
+import Post from './{{blogFileName}}.mdx'
 
 const components = {
   pre: props => <div {...props} />,
@@ -34,3 +35,4 @@ ReactDOM.render(
   <MDXProvider><BlogBody /></MDXProvider>,
   document.getElementById('blog-body')
 )
+`

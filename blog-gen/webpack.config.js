@@ -1,5 +1,5 @@
 const path = require('path')
-const postLocations = require('./post-locations.js')
+const postLocations = require('./postLocations.js')
 
 const config = (name, env) => {
   return {
