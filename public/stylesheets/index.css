@@ -37,20 +37,49 @@ div {
   border-collapse:collapse;
 }
 
-.contact-info {
-	text-align: center;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-  	
+.section-1-container {
+	display: flex;
 }
 
-.contact-box {
-	border: 2px solid gray;
-	border: .2rem solid gray;
-	display: inline-block;
-	padding: 10px 20px 15px 20px;
-	padding: 1.0rem 2.0rem 1.5rem 2.0rem;
+.contact-info {	
+	margin-left: 10px;		
+	display: flex;
+	flex-direction: column;
+	padding-right: 15px;
+	border-right: 2px solid black;
+}
+
+.contact-spacer {
+	position: relative;
+	flex-grow: 1;
+}
+
+.down-arrow {	
+	font-size: 35px;
+	bottom: -26px;
+	right: -26px;
+	position: absolute;	
+}
+
+.about-david {
+	display: flex;
+	flex-grow: 1;
+	padding: 30px;
+	/*justify-content: center;*/
+}
+
+.about-content {
+	max-width: 800px;
+	margin-left: 30px;
+	padding-bottom: 30px;
+}
+
+.about-content div {
+	margin-bottom: 8px;
+}
+
+.about-header {
+	font-weight: bold
 }
 
 .cell {

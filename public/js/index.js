@@ -8,8 +8,12 @@ function resizeSections() {
 }
 
 $(function(){
-	resizeSections();
+	resizeSections()
+	// shine()
+})
 
+
+function shine() {
 	var screenHeight = window.innerHeight
 	var screenWidth = window.innerWidth	
 
@@ -123,7 +127,7 @@ $(function(){
 	]
 
 	reveal();	
-})
+}
 
 $(window).resize(resizeSections);
 
