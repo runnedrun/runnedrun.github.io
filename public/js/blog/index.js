@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = {\n  Discover: {\n    subtitle: \"Identifying meaningful problems to solve.\",\n    posts: [\"5 Lessons From Impact Startups\"]\n  },\n  Do: {\n    subtitle: \"Exexuting quickly, collaboratively and joyfully.\",\n    posts: [] // posts: [\"A new way to build products\"]\n\n  },\n  Reflect: {\n    subtitle: \"Thoughts that differentiate me from a sea cucumber.\",\n    posts: [] // posts: [\"Why is Nairobi safer than Johannesburg?\"]\n\n  },\n  Other: {\n    posts: [\"About David\"]\n  }\n};\n\n//# sourceURL=webpack:///./blogsList.js?");
+eval("module.exports = {\n  \"About David\": [],\n  \"3 Heuristics For Moderation\": [],\n  \"Finding Product Flow\": [],\n  \"Authenticity and Privilege\": [],\n  \"5 Lessons from Impact startups\": [],\n  \"Train Employers, not Engineers\": []\n};\n\n//# sourceURL=webpack:///./blogsList.js?");
 
 /***/ }),
 

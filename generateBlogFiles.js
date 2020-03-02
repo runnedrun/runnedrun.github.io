@@ -17,8 +17,8 @@ allPosts.forEach((postTitle) => {
 
   allPostLocations[postFileName] = `${relativeDirLocation}/generated-blog.js`
 
-  const replacedHTML = htmlTemplate.replace('{{blogTitle}}', postTitle).replace('{{blogFileName}}', postFileName)  
-  const replacedJS = jsTemplate.replace('{{blogFileName}}', postFileName)
+  const replacedHTML = htmlTemplate.replace(/{{blogTitle}}/gm, postTitle).replace(/{{blogFileName}}/gm, postFileName)  
+  const replacedJS = jsTemplate.replace(/{{blogFileName}}/gm, postFileName)
       
   fs.writeFile(postHTMLFileLocation, replacedHTML)
   fs.exists(dirLocation, function(exists) {

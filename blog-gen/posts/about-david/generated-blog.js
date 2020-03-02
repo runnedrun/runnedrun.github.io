@@ -1,4 +1,3 @@
-
 const React = require('react')
 const ReactDOM = require('react-dom')
 import {MDXProvider} from '@mdx-js/react'
@@ -14,7 +13,7 @@ const BlogBody = (props) => {
     <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <a href="/blog.html">← All essays</a>
+            <a href="/">← Home</a>
           </div>
         </div>
         <div className="row title-row">
