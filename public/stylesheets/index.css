@@ -43,25 +43,35 @@ div {
 
 .section-1-container {
 	display: flex;
+	height: 100%;
 }
 
 .contact-info {	
 	margin-left: 10px;		
 	display: flex;
-	flex-direction: column;
-	padding-right: 15px;
+	flex-direction: column;	
+}
+
+.contact-content {
 	border-right: 2px solid black;
+	padding-right: 15px;
 }
 
 .contact-spacer {
 	position: relative;
 	flex-grow: 1;
+	border-right: 2px solid black;
+	padding-right: 15px;
+}
+
+.contact-bottom {
+	height: 30px;
 }
 
 .down-arrow {	
 	font-size: 35px;
 	bottom: -26px;
-	right: -26px;
+	right: -12px;
 	position: absolute;	
 }
 
@@ -69,13 +79,12 @@ div {
 	display: flex;
 	flex-grow: 1;
 	padding: 30px;
-	/*justify-content: center;*/
 }
 
 .about-content {
-	max-width: 800px;
+	max-width: 750px;
 	margin-left: 30px;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 
 .about-content div {
@@ -83,7 +92,8 @@ div {
 }
 
 .about-header {
-	font-weight: bold
+	font-weight: bold;
+	margin-top: 20px;
 }
 
 .cell {
