@@ -4,5 +4,6 @@ module.exports = {
   "Finding Product Flow": [],
   "Authenticity and Privilege": [],
   "5 Lessons from Impact startups": [],
-  "Train Employers, not Engineers": [],
+  "Train Employers not Engineers": [],
+  "Rapid Product Development": []
 };

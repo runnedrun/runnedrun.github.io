@@ -5,6 +5,11 @@ function resizeSections() {
 	var screenHeight = window.innerHeight
 	$(".section-1").css("height", screenHeight);
 	$(".section-2").css("min-height", screenHeight);
+	$(".scroll-to-resume-link").click(() => {
+		$(document.body).animate({
+			scrollTop: screenHeight
+		})
+	})
 }
 
 $(function(){

@@ -24,6 +24,8 @@ h3 {
 h4 {
 	font-size: 14px
 	font-size: 1.4rem;
+  line-height: 2rem;
+  line-height: 20px;
 }
 
 div {
@@ -49,7 +51,29 @@ div {
 .contact-info {	
 	margin-left: 10px;		
 	display: flex;
-	flex-direction: column;	
+	flex-direction: column;
+	width: 200px;
+}
+
+.bio div {
+	margin-bottom: 5px;
+}
+
+.bio {
+	margin-bottom: 15px;
+}
+
+.profile-photo-container {
+	margin-top: 20px;
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	overflow: hidden;
+}
+
+.profile-photo {
+	height: 150px;
+	width: 150px;
 }
 
 .contact-content {
@@ -112,11 +136,6 @@ div {
 	margin-top: 20px;
 	margin-top: 2.0rem;
 	text-align: center;
-}
-
-.activities {
-	margin-top: 70px;
-	margin-top: 7.0rem;
 }
 
 .activity {
