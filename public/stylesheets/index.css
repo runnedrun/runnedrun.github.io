@@ -279,23 +279,66 @@ div {
 }
 
 @media (max-device-width: 480px) { 
-	.contact-info {
-		text-align: center;
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-		border-right: 0px;
-	}
-
 	.contact-box {	
 		display: inline-block;
-		padding: 10px 20px 15px 20px;
-		padding: 1.0rem 2.0rem 1.5rem 2.0rem;
+		padding: 20px 30px;
+		padding: 2.0rem 3.0rem;
+		border: 4px solid black;
+		background: white;
+		z-index: 1;
+	}
+	
+	.profile-photo-container {
+		margin-bottom: 60px;
+		margin-bottom: 6.0rem;
+		margin-top: 60px;
+		margin-top: 6.0rem;
+		height: 400px;
+		height: 40rem;
+		width: 400px;
+		width: 40rem;
+	}
+
+	.center-photo {
+		 display: flex;
+		 justify-content: center;
+	}
+
+	.profile-photo {
+		height: 400px;
+		height: 40rem;
+		width: 400px;
+		width: 40rem;
+	}
+
+	.bio {
+		font-size: 40px;
+		font-size: 4.0rem;
 	}
 
 	.mobile-only {
 		display: block;
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.mobile-arrow {
+		width: 50%;
+		border-right: 4px solid black;
+		align-self: flex-start;
+		top: 50%;
+		height: 40%;
+		position: absolute;
+	}
+
+	.mobile-arrow-head {
+		position: absolute;
+		font-size: 7.0rem;
+		top: 94%;
+		right: -19px;
 	}
 
 	.web-only {
@@ -381,5 +424,15 @@ div {
 
 	.edu-intro-line-1, .edu-intro-line-2  {
 		font-size: 3.0rem;
+	}
+
+	.activity-heading {	
+		margin-bottom: 35px;
+		margin-bottom: 3.5rem;
+	}
+
+	.work-section-header {
+		margin-bottom: 30px;
+		margin-bottom: 3.0rem;
 	}
 }
