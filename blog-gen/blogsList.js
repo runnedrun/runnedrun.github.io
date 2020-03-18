@@ -5,5 +5,6 @@ module.exports = {
   "Authenticity and Privilege": [],
   "5 Lessons from Impact startups": [],
   "Train Employers not Engineers": [],
-  "Rapid Product Development": []
+  "Rapid Product Development": [],
+  "What Robots Can Teach us About the Future of Software Development": [],
 };
