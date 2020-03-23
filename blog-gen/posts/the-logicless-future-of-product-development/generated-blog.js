@@ -1,7 +1,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 import {MDXProvider} from '@mdx-js/react'
-import Post from './rapid-product-development.mdx'
+import Post from './the-logicless-future-of-product-development.mdx'
 
 const components = {
   pre: props => <div {...props} />,

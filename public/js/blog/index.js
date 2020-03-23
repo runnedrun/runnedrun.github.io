@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = {\n  \"About David\": [],\n  \"3 Heuristics For Moderation\": [],\n  \"Finding Product Flow\": [],\n  \"Authenticity and Privilege\": [],\n  \"5 Lessons from Impact startups\": [],\n  \"Train Employers not Engineers\": [],\n  \"Rapid Product Development\": [],\n  \"What Robots Can Teach us About the Future of Software Development\": []\n};\n\n//# sourceURL=webpack:///./blogsList.js?");
+eval("module.exports = {\n  \"About David\": [],\n  \"3 Heuristics For Moderation\": [],\n  \"Finding Product Flow\": [],\n  \"Authenticity and Privilege\": [],\n  \"5 Lessons from Impact startups\": [],\n  \"Train Employers not Engineers\": [],\n  \"The Logicless Future of Product Development\": []\n};\n\n//# sourceURL=webpack:///./blogsList.js?");
 
 /***/ }),
 
